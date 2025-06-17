@@ -1,0 +1,33 @@
+name: "oozing Binary"
+author: Babullay
+category: PWN
+description: |-
+  Due to Alot of shelling Yesterday , My Binary started Leaking Aghhhhhhhh!!!! sus
+
+  **Author**: [Babullay](https://babullay.vercel.app)
+
+value: 400
+type: container
+
+extra:
+  initial: 400
+  decay: 10
+  minimum: 150
+  image: f23a-pwn-ooz:latest
+  port: 8000
+  command: ""
+  volumes: ""
+  ctype: tcp
+
+flags:
+  - {
+      type: "regex",
+      content: "F23A{Y0u_Cr4zy_T00k3d_Adv4nt3g3_0f_l33king_[7-9s-zS-Z]{3}[0-9a-zA-Z]{5}[1-9a-zA-Z]{4}}",
+      data: "case_sensitive"
+  }
+
+files:
+  - dist/oozing-binary
+
+state: visible
+version: "0.1"

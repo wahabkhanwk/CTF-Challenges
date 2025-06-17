@@ -1,0 +1,36 @@
+name: "Pwn-Param"
+author: Babullay
+category: PWN
+description: |-
+  This binary wants things the *old* way — it's picky about how arguments are passed...
+
+  **Author**: [Babullay](https://babullay.vercel.app)
+
+value: 300
+type: container
+
+############################## THe Challenge.yml file is not uptodate with the Challenge details.
+
+extra:
+  initial: 300
+  decay: 10
+  minimum: 100
+  image: f23a-pwn-param:latest
+  port: 5000
+  command: ""
+  volumes: ""
+  ctype: tcp
+
+flags:
+  - {
+      type: "regex",
+      content: "F23A{D4MN_R3t2W1n_p4r4m_Exp01t3D_[7-9s-zS-Z]{3}[0-9a-zA-Z]{5}[1-9a-zA-Z]{4}}",
+      data: "case_sensitive"
+  }
+
+files:
+  - dist/parameters
+  - dist/flag.txt
+
+state: visible
+version: "0.1"
